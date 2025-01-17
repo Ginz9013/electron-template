@@ -13,6 +13,10 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'error',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
+    'prefer-default-export': 'off',
+    'global-require': 'off',
   },
   parserOptions: {
     ecmaVersion: 2022,

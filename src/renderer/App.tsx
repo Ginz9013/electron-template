@@ -36,7 +36,7 @@ function Hello() {
             </span>
             Donate
           </button>
-          <Button onClick={() => console.log("Hi, Shadcn!")}>Shadcn/ui</Button>
+          <Button onClick={() => console.log('Hi, Shadcn!')}>Shadcn/ui</Button>
         </a>
       </div>
     </div>
