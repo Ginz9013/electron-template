@@ -16,7 +16,17 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
     'prefer-default-export': 'off',
+    'import/prefer-default-export': 'off',
     'global-require': 'off',
+    'react/prop-types': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+    'jsx-a11y/label-has-associated-control': 'off',
+    'react/function-component-definition': 'off',
   },
   parserOptions: {
     ecmaVersion: 2022,
