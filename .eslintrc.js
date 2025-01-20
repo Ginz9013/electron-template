@@ -27,6 +27,12 @@ module.exports = {
     ],
     'jsx-a11y/label-has-associated-control': 'off',
     'react/function-component-definition': 'off',
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+    },
   },
   parserOptions: {
     ecmaVersion: 2022,
