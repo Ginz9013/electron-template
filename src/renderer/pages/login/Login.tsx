@@ -4,12 +4,14 @@ import { Input } from '@/src/renderer/components/ui/input';
 import CenterLayout from '@/src/renderer/components/layout/Center';
 import icon from '@/assets/icon.svg';
 
+const { CenterContainer } = CenterLayout;
+
 const Login = () => {
   const navigate = useNavigate();
 
   return (
     <CenterLayout>
-      <div className="flex flex-col items-center gap-4">
+      <CenterContainer>
         <img width="160" alt="icon" src={icon} />
         <h1 className="text-white text-2xl mb-4">electron-react-boilerplate</h1>
         {/* Account */}
@@ -33,7 +35,7 @@ const Login = () => {
         >
           Login
         </Button>
-      </div>
+      </CenterContainer>
     </CenterLayout>
   );
 };
