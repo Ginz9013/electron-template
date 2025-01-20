@@ -44,7 +44,7 @@ const Login = () => {
     <CenterLayout>
       <CenterContainer>
         <img width="160" alt="icon" src={icon} />
-        <h1 className="text-white text-2xl mb-4">electron-react-boilerplate</h1>
+        <h1 className="text-white text-2xl mb-4">Continental - Warehouse Tool</h1>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(submitHandler)}

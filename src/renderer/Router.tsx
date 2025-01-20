@@ -1,15 +1,39 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { MemoryRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Login from '@/src/renderer/pages/login/Login';
 import Dashboard from '@/src/renderer/pages/dashboard/Dashboard';
 
-function RouterList() {
+const RouterList = () => (
+  <Router>
+    <RouterSwitcher />
+  </Router>
+);
+
+const RouterSwitcher = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const onNavigation = (_: any, { path }: { path: string }) => navigate(path);
+    window.electron.ipcRenderer.onNavigate(onNavigation);
+    return () => {
+      window.electron.ipcRenderer.removeListener('on-navigate', onNavigation);
+    };
+  }, []);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/return/weight" element={<TemporaryTemplate title="return/weight" />} />
+      <Route path="/return/scan_log" element={<TemporaryTemplate title="return/scan_log" />} />
+    </Routes>
+  )
+};
+
+const TemporaryTemplate = ({ title }: { title: string }) => {
+  return (
+    <h1 className="text-2xl text-white text-center">{title}</h1>
   );
-}
+};
+
 export default RouterList;
