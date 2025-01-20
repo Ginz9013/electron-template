@@ -1,4 +1,4 @@
-import CenterLayout from '@/src/renderer/components/layout/center';
+import CenterLayout from '@/src/renderer/components/layout/Center';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/src/renderer/components/ui/button';
 

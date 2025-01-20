@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/src/renderer/components/ui/button';
 import { Input } from '@/src/renderer/components/ui/input';
-import CenterLayout from '@/src/renderer/components/layout/center';
+import CenterLayout from '@/src/renderer/components/layout/Center';
 import icon from '@/assets/icon.svg';
 
 const Login = () => {
