@@ -24,7 +24,7 @@ const formSchema = z.object({
 const { CenterContainer } = CenterLayout;
 
 const Login = () => {
-  const [ _, setUser ] = useUser();
+  const [_, setUser] = useUser();
   const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -44,7 +44,9 @@ const Login = () => {
     <CenterLayout>
       <CenterContainer>
         <img width="160" alt="icon" src={icon} />
-        <h1 className="text-white text-2xl mb-4">Continental - Warehouse Tool</h1>
+        <h1 className="text-white text-2xl mb-4">
+          Continental - Warehouse Tool
+        </h1>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(submitHandler)}

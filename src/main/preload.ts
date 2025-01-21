@@ -8,7 +8,7 @@ import { curry } from 'ramda';
 const electronHandler = {
   ipcRenderer: {
     removeListener: ipcRenderer.removeListener,
-    onNavigate: curry(ipcRenderer.on.bind(ipcRenderer))('on-navigate')
+    onNavigate: curry(ipcRenderer.on.bind(ipcRenderer))('on-navigate'),
   },
 };
 

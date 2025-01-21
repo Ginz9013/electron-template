@@ -12,7 +12,10 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      1,
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+    ],
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
     'prefer-default-export': 'off',
@@ -27,12 +30,7 @@ module.exports = {
     ],
     'jsx-a11y/label-has-associated-control': 'off',
     'react/function-component-definition': 'off',
-    rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
-        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-      ],
-    },
+    'no-use-before-define': 'off',
   },
   parserOptions: {
     ecmaVersion: 2022,

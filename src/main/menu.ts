@@ -15,7 +15,7 @@ export default class MenuBuilder {
       this.setupDevelopmentEnvironment();
     }
 
-    const template = this.buildDefaultTemplate(this.mainWindow);
+    const template = this.buildDefaultTemplate();
 
     const menu = Menu.buildFromTemplate(template);
     Menu.setApplicationMenu(menu);
@@ -38,21 +38,24 @@ export default class MenuBuilder {
     });
   }
 
-  buildDefaultTemplate(mainWindow: BrowserWindow) {
+  buildDefaultTemplate() {
     const templateDefault = [
       {
         label: 'Warehouse Tool',
         submenu: [
           {
             label: 'Dashboard',
-            click() {
-              mainWindow.webContents.send("on-navigate", { path: "/dashboard" });
+            click: () => {
+              this.mainWindow.webContents.send('on-navigate', {
+                path: '/dashboard',
+              });
             },
           },
           {
             label: 'Log out',
-            click() {
-              console.log("log out!")
+            click: () => {
+              // eslint-disable-next-line no-console
+              console.log('log out!');
             },
           },
         ],
@@ -62,14 +65,18 @@ export default class MenuBuilder {
         submenu: [
           {
             label: 'Weight',
-            click() {
-              mainWindow.webContents.send("on-navigate", { path: "/return/weight" });
+            click: () => {
+              this.mainWindow.webContents.send('on-navigate', {
+                path: '/return/weight',
+              });
             },
           },
           {
             label: 'Scan Log',
-            click() {
-              mainWindow.webContents.send("on-navigate", { path: "/return/scan_log" });
+            click: () => {
+              this.mainWindow.webContents.send('on-navigate', {
+                path: '/return/scan_log',
+              });
             },
           },
         ],

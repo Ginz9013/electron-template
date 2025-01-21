@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { MemoryRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Login from '@/src/renderer/pages/login/Login';
 import Dashboard from '@/src/renderer/pages/dashboard/Dashboard';
+import Weight from '@/src/renderer/pages/Return/Weight/Weight';
 
 const RouterList = () => (
   <Router>
@@ -24,7 +25,7 @@ const RouterSwitcher = () => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/return/weight" element={<TemporaryTemplate title="return/weight" />} />
+      <Route path="/return/weight" element={<Weight />} />
       <Route path="/return/scan_log" element={<TemporaryTemplate title="return/scan_log" />} />
     </Routes>
   )
