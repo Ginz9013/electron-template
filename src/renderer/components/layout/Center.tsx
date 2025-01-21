@@ -1,15 +1,37 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const CenterLayout = ({ children }: { children: React.ReactNode }) => {
+const CenterLayout = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <div className="w-screen h-screen flex felx-col justify-center items-center">
+    <div
+      className={twMerge(
+        'w-screen h-screen flex felx-col justify-center items-center',
+        className,
+      )}
+    >
       {children}
     </div>
   );
 };
 
-const CenterContainer = ({ children }: { children: React.ReactNode }) => {
-  return <div className="flex flex-col items-center gap-4">{children}</div>;
+const CenterContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={twMerge('flex flex-col items-center gap-4', className)}>
+      {children}
+    </div>
+  );
 };
 
 CenterLayout.CenterContainer = CenterContainer;
