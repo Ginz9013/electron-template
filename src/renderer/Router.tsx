@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
-import { MemoryRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import {
+  MemoryRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from 'react-router-dom';
 import Login from '@/src/renderer/pages/login/Login';
 import Dashboard from '@/src/renderer/pages/dashboard/Dashboard';
 import Weight from '@/src/renderer/pages/Return/Weight/Weight';
@@ -19,22 +24,24 @@ const RouterSwitcher = () => {
     return () => {
       window.electron.ipcRenderer.removeListener('on-navigate', onNavigation);
     };
-  }, []);
+  }, [navigate]);
 
   return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/return/weight" element={<Weight />} />
-      <Route path="/return/scan_log" element={<TemporaryTemplate title="return/scan_log" />} />
+      <Route
+        path="/return/scan_log"
+        // eslint-disable-next-line no-use-before-define
+        element={<TemporaryTemplate title="return/scan_log" />}
+      />
     </Routes>
-  )
+  );
 };
 
 const TemporaryTemplate = ({ title }: { title: string }) => {
-  return (
-    <h1 className="text-2xl text-white text-center">{title}</h1>
-  );
+  return <h1 className="text-2xl text-white text-center">{title}</h1>;
 };
 
 export default RouterList;
