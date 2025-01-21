@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css';
 import '@/src/renderer/App.css';
 import RouterList from '@/src/renderer/Router';
 
